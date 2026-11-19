@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+:root {
+  --bg-canvas: #09080E;
+  --bg-surface: #120F1C;
+  --bg-elevated: #1A1527;
+  --border-hairline: #2A223D;
+  --text-primary: #F3EFE6;
+  --text-secondary: #C8C1D4;
+  --text-muted: #988FA8;
+  --accent-gold: #C9A45C;
+  --accent-gold-bright: #DEC07C;
+  --font-display: "Cormorant Garamond", "Noto Serif Devanagari", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Noto Sans Devanagari", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    overflow-x: clip;
+    max-width: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: clip;
+    max-width: 100%;
+    min-height: 100dvh;
+  }
+
+  #root {
+    overflow-x: clip;
+    max-width: 100%;
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3, h4, .font-literary {
+    font-family: var(--font-display);
+  }
+
+  .devanagari-verse {
+    font-family: "Noto Serif Devanagari", "Cormorant Garamond", Georgia, serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle nocturnal starlight & moonlight canvas texture */
+.nocturnal-backdrop {
+  background-color: var(--bg-canvas);
+  background-image:
+    radial-gradient(ellipse 70% 45% at 78% 8%, rgba(62, 42, 98, 0.2) 0%, rgba(18, 15, 28, 0.08) 52%, transparent 78%),
+    radial-gradient(ellipse 48% 36% at 15% 22%, rgba(201, 164, 92, 0.05) 0%, transparent 72%);
+}
+
+.starfield-layer {
+  background-image:
+    radial-gradient(1px 1px at 14% 19%, rgba(243, 239, 230, 0.4), transparent),
+    radial-gradient(1px 1px at 29% 44%, rgba(222, 192, 124, 0.3), transparent),
+    radial-gradient(1.5px 1.5px at 48% 12%, rgba(243, 239, 230, 0.34), transparent),
+    radial-gradient(1px 1px at 67% 31%, rgba(243, 239, 230, 0.28), transparent),
+    radial-gradient(1.5px 1.5px at 84% 16%, rgba(222, 192, 124, 0.42), transparent),
+    radial-gradient(1px 1px at 91% 52%, rgba(243, 239, 230, 0.26), transparent),
+    radial-gradient(1px 1px at 8% 74%, rgba(222, 192, 124, 0.25), transparent),
+    radial-gradient(1px 1px at 56% 79%, rgba(243, 239, 230, 0.24), transparent),
+    radial-gradient(1.5px 1.5px at 76% 88%, rgba(222, 192, 124, 0.3), transparent);
+  background-size: 560px 560px;
+}
+
+.headline-balance {
+  text-wrap: balance;
+}
+
+/* Tactile hardcover book spine & edge highlights */
+.hardcover-book-frame {
+  box-shadow:
+    0 18px 36px -14px rgba(0, 0, 0, 0.72),
+    0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.hardcover-spine-crease {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(0, 0, 0, 0.38) 38%,
+    rgba(255, 255, 255, 0.08) 68%,
+    transparent 100%
+  );
+}
+
+/* Physical open-book reading folio textures & central binding gutters */
+.paper-folio-warm {
+  background-color: #F4ECD9;
+  background-image:
+    radial-gradient(ellipse at 50% 45%, rgba(255, 250, 238, 0.55) 0%, rgba(224, 208, 178, 0.3) 100%),
+    repeating-linear-gradient(0deg, rgba(110, 82, 42, 0.015) 0px, rgba(110, 82, 42, 0.015) 1px, transparent 1px, transparent 3px);
+}
+
+.paper-folio-daylight {
+  background-color: #FAF8F3;
+  background-image:
+    radial-gradient(ellipse at 50% 45%, rgba(255, 255, 255, 0.65) 0%, rgba(235, 230, 218, 0.25) 100%);
+}
+
+.paper-folio-sepia {
+  background-color: #EAD8B1;
+  background-image:
+    radial-gradient(ellipse at 50% 45%, rgba(247, 233, 200, 0.52) 0%, rgba(188, 152, 98, 0.28) 100%),
+    repeating-linear-gradient(0deg, rgba(96, 64, 24, 0.025) 0px, rgba(96, 64, 24, 0.025) 1px, transparent 1px, transparent 4px),
+    repeating-linear-gradient(90deg, rgba(112, 78, 32, 0.015) 0px, rgba(112, 78, 32, 0.015) 1px, transparent 1px, transparent 5px);
+  box-shadow: inset 0 0 32px rgba(102, 68, 28, 0.14);
+}
+
+.paper-folio-midnight {
+  background-color: #120F1C;
+  background-image:
+    radial-gradient(ellipse at 50% 45%, rgba(30, 24, 46, 0.45) 0%, rgba(9, 8, 14, 0.6) 100%);
+}
+
+.book-gutter-left {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(25, 18, 10, 0.03) 76%,
+    rgba(20, 14, 8, 0.14) 94%,
+    rgba(12, 8, 4, 0.24) 100%
+  );
+}
+
+.book-gutter-right {
+  background: linear-gradient(
+    270deg,
+    transparent 0%,
+    rgba(25, 18, 10, 0.03) 76%,
+    rgba(20, 14, 8, 0.14) 94%,
+    rgba(12, 8, 4, 0.24) 100%
+  );
+}
+
+.book-spread-stack {
+  box-shadow:
+    -6px 0 0 -2px rgba(228, 218, 198, 0.18),
+    6px 0 0 -2px rgba(228, 218, 198, 0.18),
+    -11px 0 0 -4px rgba(208, 196, 174, 0.1),
+    11px 0 0 -4px rgba(208, 196, 174, 0.1),
+    0 28px 60px -16px rgba(0, 0, 0, 0.85);
+}
+
+/* Balanced browser-level text selection protection strictly on literary reading surfaces */
+.protected-no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.protected-no-select input,
+.protected-no-select textarea,
+.protected-no-select select {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+/* Print protection: hide protected literary surfaces when printing or saving as PDF */
+@media print {
+  .protected-literary-surface {
+    display: none !important;
+  }
+
+  body::after {
+    content: "TEJAS | BENIYAAZ ROOH — Original literary manuscripts are protected for online reading only.";
+    display: block;
+    padding: 4rem 2rem;
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    color: #111111;
+    text-align: center;
+  }
+}
+
+@layer base {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #DEC07C;
+    outline-offset: 2px;
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-reveal {
+  animation: fadeSlideUp 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
